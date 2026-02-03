@@ -1,0 +1,368 @@
+:root {
+    /* --- HSL Raw Values --- */
+    --clr-purple-50-raw: 260, 100%, 95%;
+    --clr-purple-300-raw: 264, 82%, 80%;
+    --clr-purple-500-raw: 263, 55%, 52%;
+
+    --clr-white-raw: 0, 0%, 100%;
+    --clr-grey-100-raw: 214, 17%, 92%;
+    --clr-grey-200-raw: 0, 0%, 81%;
+    --clr-grey-400-raw: 224, 10%, 45%;
+    --clr-grey-500-raw: 217, 19%, 35%;
+    --clr-dark-blue-raw: 219, 29%, 14%;
+    --clr-black-raw: 0, 0%, 7%;
+
+    /* Primary  */
+    --color-primary-very-light: hsl(var(--clr-purple-50-raw));
+ /*  #ece6ff */
+    --color-primary-light: hsl(var(--clr-purple-300-raw));
+    /* #c3aff5 */
+    --color-primary: hsl(var(--clr-purple-500-raw));
+    /* #733fc8 */
+
+    /* Neutrals */
+    --color-surface: hsl(var(--clr-white-raw));
+    /* #ffffff */
+    --color-surface-raised: hsl(var(--clr-grey-100-raw));
+    /* #e8eef3 */
+    --color-border: hsl(var(--clr-grey-200-raw));
+    /* #cfcfcf */
+    --color-text-muted: hsl(var(--clr-grey-400-raw));
+    /* #677180 */
+    --color-text: hsl(var(--clr-grey-500-raw));
+    /* #48546b */
+    --color-background-dark: hsl(var(--clr-dark-blue-raw));
+    /* #19212e */
+    --color-ink: hsl(var(--clr-black-raw));
+    /* #121212 */
+
+    /* font family */
+    --font-main: "Barlow Semi Condensed", system-ui, -apple-system, BlinkMacOSystemFont, sans-serif;
+
+    /* font weight */
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-bold: 600;
+
+    /* font size */
+    --fs: 0.8125rem;
+}
+
+
+/* barlow-semi-condensed-regular - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Barlow Semi Condensed';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/barlow-semi-condensed-v16-latin-regular.woff2') format('woff2');
+}
+
+/* barlow-semi-condensed-500 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Barlow Semi Condensed';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/barlow-semi-condensed-v16-latin-500.woff2') format('woff2');
+}
+
+/* barlow-semi-condensed-600 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Barlow Semi Condensed';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../fonts/barlow-semi-condensed-v16-latin-600.woff2') format('woff2');
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+h1,
+h2,
+h3 {
+    text-wrap: balance;
+}
+
+p {
+    text-wrap: pretty;
+}
+
+/* Remove list styles on ul, ol elements with a list role */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+    background-color: var(--color-surface-raised);
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+
+    /* line-height: 1.5;
+    font-family: var(--font-main);
+    font-size: var(--fs); */
+
+    /* Use the shorthand syntax: font-size/line-height font-family */
+    font: var(--fw-regular) var(--fs)/1.5 var(--font-main);
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove animations for people who prefer reduced motion */
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Utility classes  */
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+    flex-wrap: wrap;
+}
+
+/* Vertical Alignment "Switches" */
+.flex[data-align="center"] {
+    align-items: center;
+}
+
+.flex[data-align="start"] {
+    align-items: flex-start;
+}
+
+.flex[data-align="end"] {
+    align-items: flex-end;
+}
+
+/* Horizontal Spacing "Switches" */
+.flex[data-justify="between"] {
+    justify-content: space-between;
+}
+
+.flex[data-justify="center"] {
+    justify-content: center;
+}
+
+.flex[data-justify="around"] {
+    justify-content: space-around;
+}
+
+/* Direction Switch */
+.flex[data-direction="column"] {
+    flex-direction: column;
+}
+
+.grid {
+    display: grid;
+    gap: var(--gap, 1.2rem);
+}
+
+.container {
+    padding: clamp(1rem, 5vw, 3rem);
+    margin-inline: auto;
+    max-width: 90rem;
+}
+
+.stack>*+* {
+    margin-top: var(--gutter, 1rem);
+}
+
+
+/* screen reader only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.main {
+    min-height: 100vh;
+    width: 100%;
+}
+
+.testimonial-grid {
+    grid-auto-columns: 1fr;
+    grid-template-areas:
+        'one'
+        'two'
+        'three'
+        'four'
+        'five';
+}
+
+.card {
+    padding: 1rem;
+    border-radius: .5rem;
+}
+
+.profile-box {
+    gap: 1rem;
+    align-items: center;
+}
+
+.author-name {
+    font-weight: var(--fw-bold);
+    font-size: 0.875rem;
+    letter-spacing: .02rem;
+}
+
+.author-img {
+    border-radius: 50%;
+    width: 3rem;
+}
+
+.card-title {
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+}
+
+.card1 {
+    background-color: var(--color-primary);
+    color: var(--color-surface-raised);
+    grid-area: one;
+    position: relative;
+    z-index: 0;
+}
+
+.card1 .card-para {
+    color: var(--color-primary-very-light);
+}
+
+.quote-svg {
+    display: none;
+}
+
+.card2 {
+    background-color: var(--color-text);
+    color: var(--color-surface-raised);
+    grid-area: two;
+}
+
+.card3 {
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    grid-area: three;
+}
+
+.card4 {
+    background-color: var(--color-background-dark);
+    color: var(--color-surface-raised);
+    grid-area: four;
+}
+
+.card5 {
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    grid-area: five;
+}
+
+.card1 .author-img,
+.card4 .author-img {
+    border: 2px solid var(--color-primary-light);
+}
+
+@media screen and (min-width: 33em) {
+    .testimonial-grid {
+        grid-template-areas:
+            "one one"
+            "two three"
+            "five five"
+            "four four";
+    }
+
+    .quote-svg {
+        display: inline;
+        position: absolute;
+        top: 0;
+        right: 2rem;
+        z-index: -1;
+    }
+
+}
+
+@media screen and (min-width: 38em) {
+    .testimonial-grid {
+        grid-template-areas:
+            'one one'
+            'two five'
+            'three five'
+            'four four';
+    }
+}
+
+@media screen and (min-width: 54em) {
+    .testimonial-grid {
+        grid-template-areas:
+            "one one two"
+            "five five five"
+            "three four four";
+    }
+}
+
+@media screen and (min-width: 75em) {
+    .testimonial-grid {
+        grid-template-areas:
+            "one one two five"
+            "three four four five";
+    }
+}
