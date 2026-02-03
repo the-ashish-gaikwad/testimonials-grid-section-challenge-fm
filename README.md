@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Frontend Mentor solution link](https://www.frontendmentor.io/solutions/your-solution-id)
+- Solution URL: [Frontend Mentor solution link](https://www.frontendmentor.io/solutions/mobile-first-workflow-google-webfonts-helper-clamp-LuvAJ9nCGx)
 - Live Site URL: [https://the-ashish-gaikwad.github.io/testimonials-grid-section-challenge-fm](https://the-ashish-gaikwad.github.io/testimonials-grid-section-challenge-fm)
   
 ## My process
