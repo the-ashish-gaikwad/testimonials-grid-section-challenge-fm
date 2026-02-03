@@ -32,7 +32,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Frontend Mentor solution link](https://www.frontendmentor.io/solutions/your-solution-id)
-- Live Site URL: [https://the-ashish-gaikwad.github.io/testimonials-grid-section](https://the-ashish-gaikwad.github.io/testimonials-grid-section-challenge-fm)
+- Live Site URL: [https://the-ashish-gaikwad.github.io/testimonials-grid-section-challenge-fm](https://the-ashish-gaikwad.github.io/testimonials-grid-section-challenge-fm)
   
 ## My process
 
